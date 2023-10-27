@@ -1,0 +1,180 @@
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.header::after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 2rem;
+  height: 2rem;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-image: url("/assets/img/icons/header.svg");
+}
+
+.photo {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+}
+
+.header .title {
+  text-align: center;
+  font-family: "Neue Machina";
+}
+
+.information {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.information p {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 0.5rem;
+  font-size: 1.125rem;
+}
+
+.information p::before {
+  display: inline-block;
+  content: "";
+  width: 1rem;
+  height: 1rem;
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin-right: 0.5rem;
+}
+
+.information .job::before {
+  background-image: url("/assets/img/icons/job.svg");
+}
+
+.information .location::before {
+  background-image: url("/assets/img/icons/location.svg");
+}
+
+.information .phone::before {
+  background-image: url("/assets/img/icons/phone.svg");
+}
+
+.information .email::before {
+  background-image: url("/assets/img/icons/email.svg");
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  /* Tablet */
+
+  .header {
+    display: grid;
+    grid-template-areas:
+      "photo title"
+      "photo information";
+  }
+
+  .photo {
+    grid-area: photo;
+    margin: 0 auto;
+    width: 270px;
+    height: 270px;
+  }
+
+  .header .title {
+    grid-area: title;
+    text-align: start;
+    max-width: 220px;
+    margin-left: 2.063rem;
+  }
+
+  .information {
+    grid-area: information;
+    width: auto;
+    margin: 0 auto;
+  }
+
+  .information p {
+    font-size: 1.375rem;
+  }
+
+  .information .job::before {
+    width: 20px;
+    height: 20px;
+  }
+
+  .information .location::before {
+    width: 20px;
+    height: 20px;
+  }
+
+  .information .phone::before {
+    width: 20px;
+    height: 20px;
+  }
+
+  .information .email::before {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+@media screen and (min-width: 1025px) {
+  /* Desktop */
+
+  .header {
+    display: grid;
+    grid-template-areas:
+      "photo title"
+      "photo information";
+  }
+
+  .photo {
+    grid-area: photo;
+    width: 300px;
+    height: 300px;
+    margin: 0 auto;
+  }
+
+  .header .title {
+    grid-area: title;
+    font-size: 2.5rem;
+    max-width: 220px;
+    margin: 1rem 0.5rem;
+    text-align: start;
+  }
+
+  .information {
+    grid-area: information;
+  }
+
+  .information p {
+    font-size: 1.5rem;
+  }
+
+  .information .job::before {
+    width: 22px;
+    height: 22px;
+  }
+
+  .information .location::before {
+    width: 22px;
+    height: 22px;
+  }
+
+  .information .phone::before {
+    width: 22px;
+    height: 22px;
+  }
+
+  .information .email::before {
+    width: 22px;
+    height: 22px;
+  }
+}
